@@ -1,3 +1,6 @@
+
+
+
 # configure dimensions
 outerWidth =  1000
 outerHeight = 600
@@ -104,11 +107,10 @@ d3.select('button').on 'click', () ->
 
   if input.length == 0
     return
-  input = input.replace(new RegExp('sin', 'g'), 'Math.sin')
-  input = input.replace(new RegExp('cos', 'g'), 'Math.cos')
-  input = input.replace(new RegExp('tan', 'g'), 'Math.tan')
-  input = input.replace(new RegExp('exp', 'g'), 'Math.exp')
-
+  input = parseInputFunction(input)
+  console.log '#########'
+  console.log input
+  console.log '#########'
 
   evalFunc = (x) ->
     eval(input)
@@ -136,3 +138,27 @@ d3.select('#yRange').on 'change', () ->
   yDomain = [-value, value]
   yScale.domain(yDomain)
   updateScale()
+
+parseInputFunction = (input) ->
+  buildInFunction = ['sin', 'cos', 'tan', 'exp']
+
+  # 3x -> 3*x
+  input = input.replace /[0-9]+x/g, (match) ->
+    xPosition = match.length-1
+    match.substr(0, xPosition) + '*x'
+
+  # 10sin(x) -> 10*sin(x)
+  for func in buildInFunction
+    input = input.replace new RegExp("[0-9]+#{func}", 'g'), (match) ->
+      xPosition = match.length-func.length
+      match.substr(0, xPosition) + "*#{func}"
+
+  # sin(x) -> Math.sin(x)
+  for func in buildInFunction
+    input = input.replace(new RegExp(func, 'g'), "Math.#{func}")
+
+  input
+  
+  # input = input.replace(new RegExp('cos', 'g'), 'Math.cos')
+  # input = input.replace(new RegExp('tan', 'g'), 'Math.tan')
+  # input = input.replace(new RegExp('exp', 'g'), 'Math.exp')
