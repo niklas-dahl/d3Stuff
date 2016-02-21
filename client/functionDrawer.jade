@@ -1,0 +1,32 @@
+html
+  head
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8")
+
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css" rel="stylesheet" type="text/css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js" charset="utf-8")
+
+    script(src="//d3js.org/d3.v3.min.js" charset="utf-8")
+    link(href="css/style2.css" rel="stylesheet")
+  
+  body
+
+
+    .ui.container
+      .ui.form
+        .field
+          label Funktion
+          input#input(type='text' name='function' placeholder='sin(x*x)')
+
+        .field
+          label X-Range
+          input#xRange(type='range' min='-50' max='50')
+        .field
+          label Y-Range
+          input#yRange(type='range' min='-50' max='50')
+
+        button.ui.button(type='submit') Zeichnen
+
+
+    #svgContainer
+
+    script(src="js/functionDrawer.js")

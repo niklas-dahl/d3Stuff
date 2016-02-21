@@ -1,0 +1,13 @@
+#svgContainer {
+  background-color: #cccccc;
+}
+
+svg {
+  border: 1px solid black;
+  width: 100%;
+
+  circle {
+    fill: rgba(0,0,0,0); // enables mouveover events
+    stroke-width: 2px;
+  }
+}

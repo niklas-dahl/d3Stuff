@@ -1,0 +1,17 @@
+body {
+  background-color: #d9d9d9; }
+
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 1.5px; }
+
+.axis {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-width: 1px; }
+  .axis text {
+    fill: #1a1a1a;
+    stroke: none; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUyLmNzcyIsInNvdXJjZXMiOlsic3R5bGUyLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keSB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Q5ZDlkOTtcclxufVxyXG5cclxuLmxpbmUge1xyXG4gIGZpbGw6IG5vbmU7XHJcbiAgc3Ryb2tlOiByZWQ7XHJcbiAgc3Ryb2tlLXdpZHRoOiAxLjVweDtcclxufVxyXG5cclxuLmF4aXMge1xyXG4gIGZpbGw6IG5vbmU7XHJcbiAgc3Ryb2tlOiAjMWExYTFhO1xyXG4gIHN0cm9rZS13aWR0aDogMXB4O1xyXG5cclxuICB0ZXh0IHtcclxuICAgIGZpbGw6ICMxYTFhMWE7XHJcbiAgICBzdHJva2U6IG5vbmU7XHJcbiAgfVxyXG59Il0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJLENBQUM7RUFDSCxnQkFBZ0IsRUFBRSxPQUFRLEdBQzNCOztBQUVELEtBQUssQ0FBQztFQUNKLElBQUksRUFBRSxJQUFLO0VBQ1gsTUFBTSxFQUFFLEdBQUk7RUFDWixZQUFZLEVBQUUsS0FBTSxHQUNyQjs7QUFFRCxLQUFLLENBQUM7RUFDSixJQUFJLEVBQUUsSUFBSztFQUNYLE1BQU0sRUFBRSxPQUFRO0VBQ2hCLFlBQVksRUFBRSxHQUFJLEdBTW5CO0VBVEQsS0FBSyxDQUtILElBQUksQ0FBQztJQUNILElBQUksRUFBRSxPQUFRO0lBQ2QsTUFBTSxFQUFFLElBQUssR0FDZCIsIm5hbWVzIjpbXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

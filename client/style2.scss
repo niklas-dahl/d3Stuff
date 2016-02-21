@@ -1,0 +1,20 @@
+body {
+  background-color: #d9d9d9;
+}
+
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 1.5px;
+}
+
+.axis {
+  fill: none;
+  stroke: #1a1a1a;
+  stroke-width: 1px;
+
+  text {
+    fill: #1a1a1a;
+    stroke: none;
+  }
+}
