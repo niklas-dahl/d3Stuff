@@ -29,7 +29,7 @@ addBlob = (x, y) ->
     # .style('stroke', 'red')
   .transition().duration(1000)
     .ease((x) -> x*x)
-    .attr('r', 3)
+    .attr('r', 5)
     .style('stroke', 'white')
     .style('opacity', 0)
     .remove()
