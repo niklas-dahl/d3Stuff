@@ -1,29 +1,12 @@
 width = 960
 height = 500
 fill = d3.scale.category10()
-nodes = []
-foci = [
-  {
-    x: 150
-    y: 150
-  }
-  {
-    x: 350
-    y: 250
-  }
-  {
-    x: 700
-    y: 400
-  }
-]
 
 mouseX = mouseY = 0
 
 svg = d3.select('body').append('svg')
   .attr('width', width)
   .attr('height', height)
-
-
 
 gradient = svg.append("defs")
   .append("linearGradient")
@@ -121,41 +104,3 @@ svg.on 'mousedown', () ->
     .transition()
     .attr('d', lineFunc(mousePosition))
 
-
-node = svg.selectAll('circle')
-
-tick = (e) ->
-  k = .1 * e.alpha
-  # Push nodes toward their designated focus.
-  nodes.forEach (o, i) ->
-    # o.y += (foci[o.id].y - (o.y)) * k
-    # o.x += (foci[o.id].x - (o.x)) * k
-
-    o.y += (mouseY - (o.y)) * k
-    o.x += (mouseX - (o.x)) * k
-    
-  node.attr('cx', (d) -> d.x)
-      .attr('cy', (d) -> d.y)
-
-force = d3.layout.force()
-  .nodes(nodes)
-  .links([])
-  .gravity(0)
-  .charge(-30)
-  .size([
-    width
-    height
-  ])
-  .on('tick', tick)
-
-i = 0
-setInterval (->
-  i += 100
-  # scaleX.range([0, width+i])
-  # line#.transition()
-  #   .attr('d', lineFunc(mousePosition))
-
-  nodes.push
-    id: ~ ~(Math.random() * foci.length)
-
-), 500
