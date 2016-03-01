@@ -1,7 +1,12 @@
+####################
+# This just simulates the github-pages
+# server for local testing 
+####################
+
 express = require('express')
 app = express()
 
-app.use(express.static('dist'))
+app.use(express.static('./'))
 
 server = app.listen 3000, () ->
   host = server.address().address
