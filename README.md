@@ -1,5 +1,4 @@
-# d3Stuff
-[![Build Status](https://travis-ci.org/niklas-dahl/d3Stuff.svg?branch=master)](https://travis-ci.org/niklas-dahl/d3Stuff)
+# d3Stuff [![Build Status](https://travis-ci.org/niklas-dahl/d3Stuff.svg?branch=master)](https://travis-ci.org/niklas-dahl/d3Stuff)
 
 Just some [d3.js](https://d3js.org) testing
 
