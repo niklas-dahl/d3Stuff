@@ -1,5 +1,10 @@
 language: node_js
 
+branches:
+  only:
+    - master
+    - gh-pages
+
 node_js:
   - "5"
   - "5.1"
