@@ -2,4 +2,8 @@ FROM node
 
 ADD . /proj
 
-CMD ["node", "--version"]
+WORKDIR /proj
+
+RUN npm i
+
+CMD ["npm", "start"]
