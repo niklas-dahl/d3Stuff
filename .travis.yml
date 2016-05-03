@@ -1,20 +1,18 @@
 sudo: required
-
 language: node_js
-
 branches:
   only:
-    - master
-    - gh-pages
-    - newMaster
-
+  - master
+  - gh-pages
+  - newMaster
 before_script:
-  - npm i -g gulp
-  - npm --version
-
-script: 
-  - gulp build
-
+- npm i -g gulp
+- npm --version
+script:
+- gulp build
 after_success:
-  - echo "Test Success - Branch($TRAVIS_BRANCH) Pull Request($TRAVIS_PULL_REQUEST) Tag($TRAVIS_TAG)"
-  - ./push.sh
+- echo "Test Success - Branch($TRAVIS_BRANCH) Pull Request($TRAVIS_PULL_REQUEST) Tag($TRAVIS_TAG)"
+- "./push.sh"
+env:
+  global:
+    secure: U/ilY29E7W+ik6sN3Q7TSB24SpjhjWjHsoekbGPfDAx6UGBZEygD9vnaiYtjNdRtDLOSoIauzKlb3zjdzjqJpznDY56dFysoEezVHLY4K6eXHZfH8obHda16RvCvCOy5PJlIEHx4SHdnGO9l+iX07eLpuDGrIaUvu1gFPFYu4Ni5tSgAaEwIC34OVNrq1CYiBf6KwSMGcYMvVWyC3j9kwph+px7wVFe2Iu3oRCnLUGp7YHMCRviEdh+KX0RlwodarX1Oi2+E27bQfK8mgDgzNQe68isFQgc7H3cY/uTxriVdPVJhJf74gedIy2UfGGe6kwAMAguzL+GI3YQj98gOupOoS21uSKlQtD8WFoE6QHBt/rEchku1dt3k185kjTrb7ukfXSLq2qS1vPrOnZwfgO4NwSf/KX+3UsOAl3RQIeoY9teijQnHHIR4cN0gcd0UC4x8xvd2ytxwk9AiVMNPgKAIm6p7Qu/9LNFHqpfUDoJy27e9azrhJEbIjNFp8BwfagugBLJs72a8pHmViCuJf4lKkTt6XoUlTsOhw1krrhVMKZVQ3CeIr05fQN1x3n8vR38vPmBeZ+EIphzsnSGHrpPa+Wr54bi38tnqxbNTwxIPJDuB3bqgCf3EKggp5zBTehhF0RuNP+PtjuKU6WUYFvrh69EdJzHbNt/Yvxna8SQ=
