@@ -17,7 +17,7 @@ upload_files() {
   echo "add remote"
   git remote add origin-pages https://${GH_TOKEN}@github.com/niklas-dahl/d3Stuff.git > /dev/null 2>&1
   echo "push"
-  git push --quiet --set-upstream origin-pages gh-pages 
+  git push --force --quiet --set-upstream origin-pages gh-pages 
 }
 
 setup_git
