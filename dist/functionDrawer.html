@@ -1,0 +1,31 @@
+
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js" charset="utf-8"></script>
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <link href="css/style2.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="ui container">
+      <div class="ui form">
+        <div class="field">
+          <label>Funktion</label>
+          <input id="input" type="text" name="function" placeholder="sin(x*x)"/>
+        </div>
+        <div class="field">
+          <label>X-Range</label>
+          <input id="xRange" type="range" min="-50" max="50"/>
+        </div>
+        <div class="field">
+          <label>Y-Range</label>
+          <input id="yRange" type="range" min="-50" max="50"/>
+        </div>
+        <button type="submit" class="ui button">Zeichnen</button>
+      </div>
+    </div>
+    <div id="svgContainer"></div>
+    <script src="js/functionDrawer.js"></script>
+  </body>
+</html>

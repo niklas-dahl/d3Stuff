@@ -1,0 +1,11 @@
+#svgContainer {
+  background-color: #cccccc; }
+
+svg {
+  border: 1px solid black;
+  width: 100%; }
+  svg circle {
+    fill: transparent;
+    stroke-width: 2px; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlcyI6WyJzdHlsZS5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIiNzdmdDb250YWluZXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNjY2NjY2M7XHJcbn1cclxuXHJcbnN2ZyB7XHJcbiAgYm9yZGVyOiAxcHggc29saWQgYmxhY2s7XHJcbiAgd2lkdGg6IDEwMCU7XHJcblxyXG4gIGNpcmNsZSB7XHJcbiAgICBmaWxsOiByZ2JhKDAsMCwwLDApOyAvLyBlbmFibGVzIG1vdXZlb3ZlciBldmVudHNcclxuICAgIHN0cm9rZS13aWR0aDogMnB4O1xyXG4gIH1cclxufVxyXG4iXSwibWFwcGluZ3MiOiJBQUFBLGFBQWEsQ0FBQztFQUNaLGdCQUFnQixFQUFFLE9BQVEsR0FDM0I7O0FBRUQsR0FBRyxDQUFDO0VBQ0YsTUFBTSxFQUFFLGVBQWdCO0VBQ3hCLEtBQUssRUFBRSxJQUFLLEdBTWI7RUFSRCxHQUFHLENBSUQsTUFBTSxDQUFDO0lBQ0wsSUFBSSxFQUFFLFdBQUk7SUFDVixZQUFZLEVBQUUsR0FBSSxHQUNuQiIsIm5hbWVzIjpbXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */
