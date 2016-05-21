@@ -7,7 +7,8 @@ setup_git() {
 
 commit_website_files() {
   echo "Checkout branch"
-  git checkout gh-pages
+  git branch
+  git checkout -b gh-pages
   git add ./dist
   echo "Commit"
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
