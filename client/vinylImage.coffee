@@ -2,7 +2,7 @@ width = 960
 height = 500
 fill = d3.scale.category10()
 
-svg = d3.select('body').append('svg')
+svg = d3.select('#svgContainer').append('svg')
   .attr('width', width)
   .attr('height', height)
     .append('g')
@@ -19,7 +19,7 @@ pattern = defs.append('pattern')
 container = svg.append('g')
   .attr("transform", "translate(0, 0)")
 
-pattern.append('image')
+image = pattern.append('image')
   .attr('x', 0)
   .attr('y', 0)
   .attr('height', '200')
@@ -34,19 +34,22 @@ svg.append('text')
 discData = [8 ..1]
 maxRadius = 100
 discs = null
-updateDiscs = (data, radius=maxRadius) ->
+updateDiscs = (data, radius=maxRadius, duration=500) ->
   discs = container.selectAll('.disc').data(data)
 
   discs.enter().append('circle')
     .attr('class', 'disc')
-
-  discs.transition()
-    .attr('r', (d) -> radius*d/data.length)
     .attr('cx', 100)
     .attr('cy', 100)
+    .attr('r', 0)
+
+  discs.transition().duration(duration)
+    .attr('r', (d) -> radius*d/data.length)
     .style('fill', "url(#image)")
 
-  discs.exit().remove()
+  discs.exit().transition()
+    .attr('r', 0)
+    .remove()
 
 updateDiscs(discData)
 
@@ -56,6 +59,19 @@ rotate = (deg) ->
     if i%2 == 0 then deg = -deg
     d3.interpolateString("rotate(0, 100, 100)", "rotate(#{deg}, 100, 100)")
 
+currentBlobData = null
+d3.select('#image').on 'change', () ->
+  f = this.files[0]
+  console.log "image change to", f
+  if(currentBlobData)
+    if(URL.invokeObjectURL)
+      URL.invokeObjectURL(currentBlobData)
+
+  currentBlobData = URL.createObjectURL(f)
+  image.attr('xlink:href', currentBlobData)
+
+disableAllInput = (boo = true) ->
+  d3.selectAll('.form-control, button').attr('disabled', if boo then true else null)
 
 d3.select('#dividers').on 'input', () ->
   # update gui
@@ -68,13 +84,15 @@ d3.select('#maxRadius').on 'input', () ->
   # update gui
   d3.select('#maxRadiusValue').text(this.value)
   maxRadius = this.value
-  updateDiscs(discData, maxRadius)
+  updateDiscs(discData, maxRadius, 0)
 
 d3.select('#start').on 'click', () ->
   oldWidth = discs.style('stroke-width')
   discs.style('stroke-width', 0)
+  disableAllInput()
 
   discs.transition().duration(5000)
     .attrTween('transform', rotate(180))
   .each 'end', () ->
     discs.style('stroke-width', oldWidth)
+    disableAllInput(false)

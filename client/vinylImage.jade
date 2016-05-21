@@ -1,6 +1,9 @@
 html
   head
     meta(charset="utf-8")
+    link(rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js")
     style.
       svg {
         border: 2px solid black;
@@ -17,16 +20,32 @@ html
 
 
   body
-    label(for='dividers' style="display: inline-block; width: 240px; text-align: right") Scheiben=
-      span#dividersValue 6
-    input#dividers(type='range' name='dividers' min=1 max=20 value=6)
+    .container
 
-    label(for='maxRadius' style="display: inline-block; width: 240px; text-align: right") Radius=
-      span#maxRadiusValue 100
-    input#maxRadius(type='range' name='maxRadius' min=20 max=200 value=100)
+      .form-horizontal
+        
+        .form-group
+          label.control-label.col-sm-2(for='pwd') Image:
+          .col-sm-10
+            input#image.form-control(type='file' accept="image/*")
+        
+        .form-group
+          label.control-label.col-sm-2 Radius:
+          .col-sm-10
+            input#maxRadius.form-control(type='range' min=20 max=200 value=100)
+        
+        .form-group
+          label.control-label.col-sm-2 Scheiben Anzahl:
+            span#dividersValue 6
+          .col-sm-10
+            input#dividers.form-control(type='range' min=1 max=50 value=6)
+        
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-primary#start Start
 
-    label(for='start' style="display: inline-block; width: 240px; text-align: right") Start:
-    button#start() Start
+    hr
+    .container#svgContainer
 
     script(src="http://d3js.org/d3.v3.min.js")
     script(src="js/vinylImage.js")
