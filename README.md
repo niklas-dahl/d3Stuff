@@ -4,6 +4,6 @@ Just some [d3.js](https://d3js.org) testing
 
 Bad code, no comments, just some funny tests
 
-## [http://139.59.128.194/](Hosted version)
+## [Hosted version](http://139.59.128.194/)
 
 Now with complete continuous deployment chain :)
