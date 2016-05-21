@@ -2,8 +2,6 @@ sudo: required
 language: node_js
 branches:
   only:
-  - master
-  - gh-pages
   - newMaster
 before_script:
 - npm i -g gulp
