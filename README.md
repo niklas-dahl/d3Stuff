@@ -7,3 +7,5 @@ Bad code, no comments, just some funny tests
 ## [Hosted version](http://139.59.128.194/)
 
 Now with complete continuous deployment chain :)
+
+![Deplyoment chain](http://i.imgur.com/98GAHBn.png)
