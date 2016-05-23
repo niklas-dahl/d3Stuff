@@ -1,10 +1,11 @@
-width = 750
-height = 500
+width = 750+100
+height = 500+100
 fill = d3.scale.category10()
 
 svg = d3.select('body').append('svg')
   .attr('width', width)
   .attr('height', height)
+  # .attr('shape-rendering', 'geometricPrecision')
 
 svg.append('rect')
   .attr('class', 'background')
@@ -25,7 +26,7 @@ middlePoint = {
   r: parseInt( circle.attr('r')  )
 }
 
-n = 300
+n = 250
 points = d3.range(n).map (i) ->
   {
     x: middlePoint.x + Math.cos((i/n) * 2*Math.PI)*middlePoint.r
