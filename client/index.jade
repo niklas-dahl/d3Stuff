@@ -1,9 +1,46 @@
+doctype html
 html
   head
-    script(src="//d3js.org/d3.v3.min.js" charset="utf-8")
-    link(href="css/style.css" rel="stylesheet")
-  
+    title D3 Stuff with docker
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js')
+    link(rel='stylesheet', type='text/css', href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css')
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js')
   body
-    #svgContainer
-
-    script(src="js/index.js")
+    .ui.container
+      .ui.hidden.divider
+        .ui.hidden.divider
+          h1.ui.header
+            | D3 Stuff
+            h5.sub.header
+              a(href='https://github.com/niklas-dahl/d3Stuff') Back to repository
+          .ui.hidden.divider
+            .ui.hidden.divider
+              .ui.red.segment
+                h2.ui.header UI Stuff
+                h3.ui.header Gauge 1
+                a(href='./gauge.html') link
+                h3.ui.header Gauge 2
+                a(href='./gauge2.html') link
+              .ui.green.segment
+                h2.ui.header New Stuff
+                h3.ui.header Image Rotator
+                a(href='./vinylImage.html') link
+                h3.ui.header Mandel Drawer
+                a(href='./mandel.html') link
+                  
+              .ui.hidden.divider
+                .ui.hidden.divider
+                  .ui.blue.segment
+                    h2.ui.header Random Stuff
+                    h3 Responsive Graph
+                    a(href='./dynGraph.html') link
+                    h3 Function Plotter
+                    a(href='./functionDrawer.html') link
+                    h3 Transition Line
+                    a(href='./force.html') link
+                    h3 Weird Stuff
+                    a(href='./particles.html') link
+                    h3 Image (press F5 if all pixels are black)
+                    a(href='./image.html') link
+                    h3 Force Graph (WIP)
+                    a(href='./fGraph.html') link

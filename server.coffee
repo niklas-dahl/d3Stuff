@@ -6,7 +6,7 @@
 express = require('express')
 app = express()
 
-app.use(express.static('./'))
+app.use(express.static('./dist'))
 
 server = app.listen 3000, () ->
   host = server.address().address
