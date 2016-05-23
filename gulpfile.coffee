@@ -15,6 +15,7 @@ paths =
   index:  'client/*.jade'
   sass:   'client/**/*.scss'
   coffee: 'client/**/*.coffee'
+  images: 'img/**'
 
 # front end build files
 distPaths =
@@ -40,8 +41,12 @@ gulp.task 'copyCoffee', () ->
     .pipe sourcemaps.write()
     .pipe gulp.dest 'dist/js'
 
+gulp.task 'copyImages', () ->
+  gulp.src paths.images
+    .pipe gulp.dest 'dist/img/'
+
 gulp.task 'build', () ->
-  runSequence 'copySass', 'copyIndex', 'copyCoffee'
+  runSequence 'copySass', 'copyIndex', 'copyCoffee', 'copyImages'
 
 gulp.task 'default', () ->
   runSequence 'build', ['watch', 'nodemon']
@@ -50,7 +55,7 @@ gulp.task 'watch', () ->
   gulp.watch paths.sass, ['copySass']
   gulp.watch paths.index, ['copyIndex']
   gulp.watch paths.coffee, ['copyCoffee']
-
+  gulp.watch paths.images, ['copyImages']
 
 notifyCoffeeError = (err) ->
   this.emit('end')

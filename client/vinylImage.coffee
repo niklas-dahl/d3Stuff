@@ -24,7 +24,7 @@ image = pattern.append('image')
   .attr('y', 0)
   .attr('height', '200')
   .attr('width', '200')
-  .attr('xlink:href', "image4.jpg")
+  .attr('xlink:href', "img/ying.jpg")
   
 svg.append('text')
   .attr('x', 10)
