@@ -27,6 +27,7 @@ data = []
 max = 30
 setInterval () ->
   i++
+  min = Math.max(num-10, 0)
 
   data.push {
     x: centerX + Math.cos((i/max) * 2*Math.PI)*outerRadius
@@ -44,12 +45,8 @@ setInterval () ->
     .attr('r', 0)
     .attr('cx', centerX)
     .attr('cy', centerY)
-      .transition().duration(2000)
-        .attr('cx', (d) -> d.x)
-        .attr('cy', (d) -> d.y)
-        .attr('r', innerRadius)  
 
-  circles.transition().duration(100)
+  circles.transition().duration(500)
     .attr('cx', (d) -> d.x)
     .attr('cy', (d) -> d.y)
     .attr('r', innerRadius)
