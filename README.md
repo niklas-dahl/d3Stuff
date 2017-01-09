@@ -4,7 +4,7 @@ Just some [d3.js](https://d3js.org) testing
 
 Bad code, no comments, just some funny tests
 
-## [Hosted version](http://d3stuff.niklas.tk/)
+## [Hosted version](http://d3stuff.niklas.gq/)
 
 Now with complete continuous deployment chain :)
 
